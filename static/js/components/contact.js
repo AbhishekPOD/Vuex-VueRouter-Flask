@@ -1,5 +1,5 @@
 const ContactUs = Vue.component("contact-us", {
-    template : `
+  template: `
                 <div>
                         <h2> Contact Us </h2>
                         Below are our contact details !!      
@@ -7,9 +7,9 @@ const ContactUs = Vue.component("contact-us", {
                 </div>
     `,
 
-    mounted : function () {
-        document.title = "Blogs - Contact Us"
-    }
-})
+  mounted: function () {
+    document.title = "Blogs - Contact Us";
+  },
+});
 
 export default ContactUs;

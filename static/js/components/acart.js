@@ -1,6 +1,5 @@
-
 const Cart = Vue.component("cart", {
-    template : `
+  template: `
                 <div>
                 <p>Number of Products : {{this.$store.state.count}}</p>
                 <p>Total Amount : {{this.$store.state.cost}}</p>
@@ -15,25 +14,27 @@ const Cart = Vue.component("cart", {
                 </div>
                 `,
 
-    data : function () {
-        return {
-            total_count : [],
-        }
+  data: function () {
+    return {
+      total_count: [],
+    };
+  },
+
+  computed: {
+    products: function () {
+      return this.$store.state.products;
     },
+  },
 
-    computed : {
-        products : function () {
-            return this.$store.state.products
-        }
+  methods: {
+    do_something: function (price, id) {
+      this.$store.commit("update_count", this.total_count[id]);
+      this.$store.commit("update_cost", {
+        quantity: this.total_count[id],
+        price: price,
+      });
     },
+  },
+});
 
-    methods : {
-        do_something : function (price, id) {
-            this.$store.commit("update_count", this.total_count[id]);
-            this.$store.commit("update_cost", {"quantity" : this.total_count[id], "price" : price});
-        }
-
-    }
-})
-
-export default Cart
+export default Cart;

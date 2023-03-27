@@ -9,42 +9,41 @@ const Posts = Vue.component("posts", {
                                 <p class="card-text">{{post.description}}</p>
 
                                 <!-- Button trigger modal -->
-                                
-                        <button type="button" class="card-link" :data-bs-target="'#staticBackdrop' + post.id" data-bs-toggle="modal">
-                            Update Post
-                        </button>
+                                <button type="button" class="card-link" :data-bs-target="'#staticBackdrop' + post.id" data-bs-toggle="modal">
+                                    Update Post
+                                </button>
 
-                    <!-- Modal -->
-                    <div class="modal fade" :id="'staticBackdrop' + post.id" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="'staticBackdropLabel' + post.id" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" :id="'staticBackdropLabel' + post.id">Update Blog</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class = "my-3">
-                        <label> Enter Post Title : </label>
-                        <input v-model = "title" type="text">
-                    </div>
+                                <!-- Modal -->
+                                <div class="modal fade" :id="'staticBackdrop' + post.id" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="'staticBackdropLabel' + post.id" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" :id="'staticBackdropLabel' + post.id">Update Blog</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class = "my-3">
+                                                    <label> Enter Post Title : </label>
+                                                    <input v-model = "title" type="text">
+                                                </div>
 
-                    <div class = "my-3">
-                        <label> Enter Post Description : </label>
-                        <input v-model = "desc" type="text">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" @click = "update_blog(post.id)" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-                                <button @click="delete_blog(post.id)" class="card-link">Delete Post</button>
+                                                <div class = "my-3">
+                                                    <label> Enter Post Description : </label>
+                                                    <input v-model = "desc" type="text">
+                                                </div>
+                                            </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" @click = "update_blog(post.id)" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+                        <button @click="delete_blog(post.id)" class="card-link">Delete Post</button>
                     </div>
+                </div>
+            </div>
 
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">

@@ -1,5 +1,5 @@
 const Home = Vue.component("home", {
-    template : `
+  template: `
                 <div>
                         <h2> Home Page </h2>
                         <p>Number of Products : {{this.$store.state.count}}</p>
@@ -9,9 +9,9 @@ const Home = Vue.component("home", {
                 </div>
     `,
 
-    mounted : function () {
-        document.title = "Blogs - Home"
-    }
-})
+  mounted: function () {
+    document.title = "Blogs - Home";
+  },
+});
 
 export default Home;
