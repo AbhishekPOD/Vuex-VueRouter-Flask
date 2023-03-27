@@ -9,14 +9,15 @@
     <title>Document</title>
 </head>
 <body>
-    <div class = "container" id = "app">
+    <div class = "container-fluid" id = "app">
         <nav class="navbar navbar-expand-lg bg-warning">
               <a class="navbar-brand" href="#">Vue Router App</a>
 
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                   <a class="nav-link active" aria-current="page"><router-link to="/">Home</router-link></a>
-                  <a class="nav-link"><router-link to="/cart">Cart</router-link></a>
+                  <!-- <a class="nav-link"><router-link to="/cart">Cart</router-link></a> -->
+                  <a class="nav-link"><router-link to="/posts">Posts</router-link></a>
                   <!-- <a class="nav-link"><router-link to="/about">About Us</router-link></a> -->
                   <!-- <router-link to="/course/3"><a class="nav-link">Course</a></router-link></a> -->
                   <!-- <router-link v-else to="/course/5"><a class="nav-link">Course (ID = 5)</a></router-link></a> -->
@@ -28,6 +29,7 @@
 
           <div class="row">
             <div class="column">
+                {{message}}
                 <router-view></router-view>
             </div>
           </div>

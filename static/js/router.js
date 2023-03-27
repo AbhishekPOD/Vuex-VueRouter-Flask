@@ -4,6 +4,7 @@ import About from "./components/about.js";
 import ContactUs from "./components/contact.js";
 import Course from "./components/course.js";
 import Cart from "./components/acart.js";
+import Posts from "./components/post.js";
 
 const routes = [
     {
@@ -26,6 +27,10 @@ const routes = [
     {
         path : "/cart",
         component : Cart,
+    },
+    {
+        path : "/posts",
+        component : Posts,
     },
 ]
 

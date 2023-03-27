@@ -3,7 +3,7 @@ import store from "./astore.js"
 
 const a = new Vue({
     el : "#app",
-    delimeters : ['${', '}'],
+    delimiters : ['${', '}'],
     router : router,
     store,
     data : {
@@ -12,8 +12,4 @@ const a = new Vue({
     methods : {
 
     },
-    mounted : function () {
-        console.log("Invoked action function...")
-        this.$store.dispatch("get_products")
-    }
 })

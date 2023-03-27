@@ -7,7 +7,11 @@ const Home = Vue.component("home", {
                         This is my home page !!      
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sed placeat vero, sit corporis fugiat rerum mollitia reiciendis dicta pariatur id architecto harum esse totam odio deserunt illum modi doloribus nobis velit magni repellendus at consequatur quasi. Illum quia rem atque eos itaque eius! Deleniti animi fuga inventore ut modi.
                 </div>
-    `
+    `,
+
+    mounted : function () {
+        document.title = "Blogs - Home"
+    }
 })
 
 export default Home;
