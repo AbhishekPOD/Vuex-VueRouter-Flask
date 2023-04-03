@@ -44,7 +44,8 @@ const Posts = Vue.component("posts", {
                     </div>
                 </div>
             </div>
-
+            
+            <button @click = "trigger_celery_job"> Trigger a Celery Job </button>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     Create Post
@@ -67,6 +68,11 @@ const Posts = Vue.component("posts", {
                             <div class = "my-3">
                                 <label> Enter Post Description : </label>
                                 <input v-model = "desc" type="text">
+                            </div>
+
+                            <div class = "my-3">
+                                <label> Enter Post Image : </label>
+                                <input type="file" id="myFile" name="filename">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -153,6 +159,28 @@ const Posts = Vue.component("posts", {
             });
         });
     },
+
+    trigger_celery_job : function () {
+
+      fetch("/trigger-celery-job").then(r => r.json()
+      ).then(d => {
+        console.log("Celery Task Details:", d);
+        let interval = setInterval(() => {
+          fetch(`/status/${d.Task_ID}`).then(r => r.json()
+          ).then(d => {
+              if (d.Task_State === "SUCCESS") {
+                console.log("task finished")
+                clearInterval(interval);
+                window.location.href = "/download-file";
+              }
+              else {
+                console.log("task still executing")
+              }
+          })
+        }, 4000)
+      })
+    }
+
   },
   mounted: function () {
     document.title = "Blogs - Show Posts";

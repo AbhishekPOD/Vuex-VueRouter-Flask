@@ -1,1 +1,5 @@
 instance/
+.env/
+__pycache__
+celerybeat-schedule
+dump.rdb

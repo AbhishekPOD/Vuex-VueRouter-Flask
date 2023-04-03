@@ -55,4 +55,8 @@
     type="module"
     src="{{ url_for('static', filename = 'js/app.js') }}"
   ></script>
+  <script>
+    let a = {{a|tojson}}
+    console.log(a, typeof(a))
+  </script>
 </html>
